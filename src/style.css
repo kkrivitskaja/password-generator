@@ -10,7 +10,7 @@ body {
     display: flex;
     font-family: 'Montserrat',
         sans-serif;
-        font-weight: bold;
+    font-weight: bold;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -26,14 +26,65 @@ h3 {
     margin: 10px 0 20px;
     text-align: center;
     font-size: 1.5em;
-    
 }
 
-input[type=checkbox] {
+input[type=checkbox]  {
+    position: absolute;
+    /* margin-left: -0.5em; */
     margin-right: 0;
     border-radius: 10px;
-    }
+    -webkit-appearance: none;
+    /* его нет визуально но он существует в отличие от display:none*/
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
 
+.setting {
+    margin: 15px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.check-box {
+    position: absolute;
+    /* margin-right:-2em; */
+    margin-left: -1.5em;
+    width: 1em;
+    height: 1em;
+    background-color: #f5f5f5;
+    border: 1px solid #756e6e;
+    border-radius: 5px;
+}
+
+.checkbox {
+    display: block;
+    margin-bottom: 0.5em;
+    margin-left: 1.5em;
+    cursor: pointer;
+}
+
+
+
+
+input[type=checkbox]:checked+.check-box {
+    background-color: #3075be;
+    background-image: url(./img/check.svg);
+    cursor: pointer;
+}
+
+input[type=checkbox]:focus+.check-box {
+    border: 2px solid #000000;
+}
+
+input[type=checkbox]:checked:focus+.check-box {
+    background-color: #3075be;
+}
+
+.checkbox {
+    cursor: pointer;
+}
 
 .container {
     background-color: #cfd9e4;
@@ -58,57 +109,62 @@ input[type=checkbox] {
     border-radius: 10px;
 }
 
-.result-container #result{
+.result-container #result {
     word-wrap: break-word;
     max-width: calc(100%-40px);
 }
 
-.btn{
-border: none;
-color: #000;
-cursor: pointer;
-font-size: 20px;
-padding: 8px 12px;
-background-color: #ffffff;
-border-radius: 10px;
+.btn {
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border-radius: 10px;
 }
 
-.result-container .btn{
-font-size: 20px;
-position: absolute;
-top: 5px;
-right: 5px;
-height: 40px;
-width: 40px;
+.result-container .btn {
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 40px;
+    width: 40px;
 }
 
-.btn-lage{
+.btn-lage {
     display: block;
     width: 100%;
     color: white;
     background-color: #000000;
 }
 
-.setting{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-    /*cursor: pointer;*/
-    user-select:none;
+.btn-lage:hover {
+    background-color: #181818;
+    box-shadow: 0 2px 10px #95969e;
 }
 
-#length{
+.setting {
+    display: block;
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    margin: 15px 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+#length {
     width: 45px;
+    height: 20px;
     border-radius: 5px;
     padding-left: 5px;
     border: none;
 }
 
-
-
-@media screen and (max-width:400px){
-    .result-container{
+@media screen and (max-width:400px) {
+    .result-container {
         font-size: 14px;
     }
 }
