@@ -1,5 +1,5 @@
 const resultEl = document.getElementById('result');
-const rangeLength = document.getElementById('range')
+const rangeLength = document.getElementById('range');
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
 const lowercaseEl = document.getElementById('lowercase');
@@ -13,9 +13,8 @@ lengthEl.addEventListener('input', syncLength);
 
 function syncLength(e) {
     const value = e.target.value;
-rangeLength.value=value;
+    rangeLength.value = value;
     lengthEl.value = value;
-
 }
 
 const randomFunc = {
@@ -39,7 +38,7 @@ clipboardBtn.addEventListener('click', () => {
     document.execCommand('copy');
     textArea.remove();
     alert('Password copied to clipboard');
-})
+});
 
 generateBtn.addEventListener('click', () => {
     const length = +lengthEl.value;
@@ -64,7 +63,7 @@ function generatePassword(upper, lower, number, symbol, length) {
         return '';
     }
     for (let i = 0; i < length; i += typesCount) {
-        typesArray.forEach(type => {
+        typesArray.forEach((type) => {
             const funcName = Object.keys(type)[0];
             generatedPassword += randomFunc[funcName]();
         });
