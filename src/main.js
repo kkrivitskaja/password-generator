@@ -1,4 +1,5 @@
 const resultEl = document.getElementById('result');
+const rangeLength = document.getElementById('range')
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
 const lowercaseEl = document.getElementById('lowercase');
@@ -6,6 +7,16 @@ const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const generateBtn = document.getElementById('generate');
 const clipboardBtn = document.getElementById('clipboard');
+
+rangeLength.addEventListener('input', syncLength);
+lengthEl.addEventListener('input', syncLength);
+
+function syncLength(e) {
+    const value = e.target.value;
+rangeLength.value=value;
+    lengthEl.value = value;
+
+}
 
 const randomFunc = {
     upper: getRandomUpper,

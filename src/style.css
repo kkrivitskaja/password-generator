@@ -46,6 +46,25 @@ input[type=checkbox]  {
     user-select: none;
 }
 
+.setting-length{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 15px 0;
+}
+
+
+#length {
+    width: 45px;
+    height: 20px;
+    border-radius: 5px;
+    padding-left: 5px;
+    border: none;
+}
+#range{
+    width: 80px;
+}
+
 
 .check-box {
     position: absolute;
